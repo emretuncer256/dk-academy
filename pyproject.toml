@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "dk-academy"
 version = "0.1.0"
-description = ""
-authors = ["Emre Tuncer <emretuncer.developer@gmail.com>"]
+description = "An interactive comic-style app designed to engage children in a personalized learning experience by generating custom visuals based on their interests."
+authors = [
+    "Emre Tuncer <emretuncer.developer@gmail.com>",
+    "Emirhan Guner <emirhanprogramming@gmail.com>",
+]
 readme = "README.md"
 
 [tool.poetry.dependencies]
