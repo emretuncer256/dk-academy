@@ -7,10 +7,27 @@ authors = [
     "Emirhan Guner <emirhanprogramming@gmail.com>",
 ]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
+streamlit = "^1.39.0"
+torch = { version="2.4.1", source="torch" }
+torchvision = { version="0.19.1", source="torch" }
+google-generativeai = "^0.8.3"
+huggingface-hub = "^0.26.1"
+diffusers = "^0.31.0"
+transformers = "^4.46.0"
+accelerate = "^1.0.1"
 
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu121"
+priority = 'explicit'
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]
