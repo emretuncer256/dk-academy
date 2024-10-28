@@ -5,4 +5,4 @@ from dataclasses import dataclass
 class User:
     name: str
     age: int
-    interests: list[str]
+    interests: list[str] | None = None
