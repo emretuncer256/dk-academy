@@ -1,7 +1,7 @@
 {
     "space": {
         "name": "Uzay",
-        "image": "output.png",
+        "image": "assets/",
         "status": false
     },
     "robot": {
