@@ -1,0 +1,32 @@
+{
+    "space": {
+        "name": "Uzay",
+        "image": "output.png",
+        "status": false
+    },
+    "robot": {
+        "name": "Robotlar",
+        "image": "output.png",
+        "status": false
+    },
+    "underwater": {
+        "name": "Su altı",
+        "image": "output.png",
+        "status": false
+    },
+    "plants": {
+        "name": "Bitkiler",
+        "image": "output.png",
+        "status": false
+    },
+    "animals": {
+        "name": "Hayvanlar",
+        "image": "output.png",
+        "status": false
+    },
+    "vehicles": {
+        "name": "Taşıtlar",
+        "image": "output.png",
+        "status": false
+    }
+}
