@@ -7,12 +7,12 @@ def lessons():
         st.rerun()
     st.title("Dersler")
 
-    cols = st.columns(4)
+    cols = st.columns(3)
 
     for i, col in enumerate(cols):
         with col:
             with st.container(border=True):
-                st.image("math.webp", use_column_width=True)
+                st.image("mathC.webp", use_column_width=True)
                 st.button(f"{i} Matematik",
                           use_container_width=True,
                           type="primary")

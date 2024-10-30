@@ -1,4 +1,4 @@
-from dkacademy.services.image_generation import SDXLGenerator
+from services.image_generation import SDXLGenerator
 import streamlit as st
 
 
