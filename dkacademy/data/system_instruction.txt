@@ -35,7 +35,7 @@ Bu girdiye dayanarak **JSON formatında bir çizgi roman oluştur**. title olaca
 2. **story**: Bu paneldeki hikaye.
 3. **visual_prompts**: Panelde kullanılacak 2 görselin açıklamaları (görsel promptlar).
 4. **question**: 
-   - **question**: Hikaye ile bağlantılı bir matematik sorusu.
+   - **question**: Hikaye ile bağlantılı bir {lesson} sorusu.
    - **answers**: Birden fazla seçenek içeren cevaplar listesi.
    - **correct_answer**: Doğru cevap.
    - **explanation**: Yanlış cevap verildiğinde doğru cevabın açıklaması.
