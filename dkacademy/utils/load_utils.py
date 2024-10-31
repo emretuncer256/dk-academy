@@ -21,17 +21,17 @@ def load_interests() -> dict:
 
 
 @st.cache_data
-def load_lectures():
+def load_lessons():
     try:
         with open(os.getenv("LECTURES_PATH"), "r") as file:
-            lectures: dict = json.load(file)
+            lessons: dict = json.load(file)
     except FileNotFoundError:
         st.error("The file interests.json was not found.")
-        lectures = {}
+        lessons = {}
     except json.JSONDecodeError:
         st.error("Error decoding the JSON file.")
-        lectures = {}
+        lessons = {}
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
-        lectures = {}
-    return lectures
+        lessons = {}
+    return lessons
