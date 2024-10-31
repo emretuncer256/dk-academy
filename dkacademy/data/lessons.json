@@ -2,15 +2,15 @@
     "lessons": [
         {
             "name": "Matematik",
-            "image": null
+            "image": "mathC.webp"
         },
         {
             "name": "Türkçe",
-            "image": null
+            "image": "mathC.webp"
         },
         {
             "name": "Fen Bilimleri",
-            "image": null
+            "image": "mathC.webp"
         }
     ]
 }

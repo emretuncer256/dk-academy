@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import load_interests
+from models.prompt import Prompt
 
 
 def interests():
@@ -21,5 +22,6 @@ def interests():
     for i in ints.values():
         if i["status"]:
             st.session_state["user"].interests = [i["name"]]
+            st.session_state["prompt"] = Prompt(st.session_state["user"])
             st.session_state["page"] = 2
             st.rerun()
