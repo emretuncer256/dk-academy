@@ -1,7 +1,7 @@
 {
     "space": {
         "name": "Uzay",
-        "image": "output.webp",
+        "image": "interests/space.webp",
         "status": false
     },
     "robot": {
@@ -11,7 +11,7 @@
     },
     "underwater": {
         "name": "Su altı",
-        "image": "output.webp",
+        "image": "interests/underWater.webp",
         "status": false
     },
     "plants": {
