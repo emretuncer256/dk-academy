@@ -74,5 +74,6 @@ Bu girdiye dayanarak **JSON formatında bir çizgi roman oluştur**. title olaca
 - Her panelde işlenen konuyla ilgili `learned` kısmında öğrencinin ne öğrendiği yazılacak.
 - Hikaye boyunca uyum ve bütünlük sağlanacak.
 - Hikayede hayali karakterler olacak. Öğrencinin ismini kullanılmayacak.
+- Hikayedeki karakterlerin ismi Türkçe olacak.
 - Sorular hikayenin akışına uygun olacak ve temel düzeyde {lesson} soruları içerecek.
 - Sana verilen JSON formatında bilgi alıp, yine aynı formatta çıktı vereceksin.
