@@ -1,0 +1,16 @@
+{
+    "lectures": [
+        {
+            "name": "Matematik",
+            "image": null
+        },
+        {
+            "name": "Türkçe",
+            "image": null
+        },
+        {
+            "name": "Fen Bilimleri",
+            "image": null
+        }
+    ]
+}
