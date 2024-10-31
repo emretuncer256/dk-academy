@@ -35,3 +35,17 @@ def load_lessons():
         st.error(f"An unexpected error occurred: {e}")
         lessons = {}
     return lessons
+
+
+@st.cache_data
+def load_system_instruction():
+    try:
+        with open(os.getenv("SYSTEM_INSTRUCTION_PATH"), "r") as file:
+            instruction: str = file.read()
+    except FileNotFoundError:
+        st.error("The file system_instruction.txt was not found.")
+        instruction = None
+    except Exception as e:
+        st.error(f"An unexpected error occurred: {e}")
+        instruction = None
+    return instruction
