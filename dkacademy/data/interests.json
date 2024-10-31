@@ -1,32 +1,32 @@
 {
     "space": {
         "name": "Uzay",
-        "image": "space.webp",
+        "image": "output.webp",
         "status": false
     },
     "robot": {
         "name": "Robotlar",
-        "image": "output.png",
+        "image": "output.webp",
         "status": false
     },
     "underwater": {
         "name": "Su altı",
-        "image": "underWater.webp",
+        "image": "output.webp",
         "status": false
     },
     "plants": {
         "name": "Bitkiler",
-        "image": "output.png",
+        "image": "output.webp",
         "status": false
     },
     "animals": {
         "name": "Hayvanlar",
-        "image": "output.png",
+        "image": "output.webp",
         "status": false
     },
     "vehicles": {
         "name": "Taşıtlar",
-        "image": "output.png",
+        "image": "output.webp",
         "status": false
     }
 }
