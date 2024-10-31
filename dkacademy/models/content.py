@@ -1,5 +1,8 @@
 from models.base import BaseModel
 from dataclasses import dataclass
+from datetime import datetime
+import os
+import json
 
 
 @dataclass
@@ -66,3 +69,26 @@ class Content(BaseModel):
     def from_json(cls, data):
         return cls(title=data["title"],
                    panels=[Panel.from_json(panel) for panel in data["panels"]])
+
+    def save(self) -> str:
+        # Create contents folder if not exists
+        contents_folder = 'contents'
+        if not os.path.exists(contents_folder):
+            os.makedirs(contents_folder)
+
+        # Create a folder with current timestamp
+        timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+        content_folder = os.path.join(contents_folder, timestamp)
+        os.makedirs(content_folder)
+
+        # Convert to JSON and save to content.json
+        json_data = self.to_json()
+        json_path = os.path.join(content_folder, 'content.json')
+        with open(json_path, 'w', encoding="utf-8") as json_file:
+            json.dump(json_data, json_file, ensure_ascii=False, indent=4)
+
+        # Create images folder
+        images_folder = os.path.join(content_folder, 'images')
+        os.makedirs(images_folder)
+
+        return content_folder
