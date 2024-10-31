@@ -2,7 +2,15 @@
     "lessons": [
         {
             "name": "Matematik",
-            "image": "mathC.webp"
+            "image": "mathC.webp",
+            "topics": [
+                "Toplama ve Çıkarma",
+                "Çarpma ve Bölme",
+                "Zaman Ölçme",
+                "Veri Toplama ve Değerlendirme",
+                "Uzunluk Ölçme",
+                "Sıvı Ölçme"
+            ]
         },
         {
             "name": "Türkçe",
