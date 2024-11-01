@@ -1,6 +1,5 @@
 import streamlit as st
 import utils
-import os
 
 
 def lessons_page():
