@@ -12,10 +12,11 @@ def check_user_and_prompt():
 
 
 def generation_page():
+    check_user_and_prompt()
     st.title("Generation")
 
-    user = User("Emre", 7, "Erkek", ["Bitkiler"])
-    prompt = Prompt(user, "Matematik", "Zaman Ölçme")
+    user = st.session_state["user"]
+    prompt = st.session_state["prompt"]
 
     st.write(user)
     st.write(prompt)
@@ -27,15 +28,23 @@ def generation_page():
 
         model = GeminiService(pb.system_instruction)
         content = model.generate_content(pb.prompt)
-        content_folder = content.save()
-        st.session_state["content"] = content
         st.write(content)
+
+        content.save()
+        st.session_state["content"] = content
+        st.session_state["next_panel"] = 1
+        st.session_state["content_folder"] = content.content_folder
+
         for panel in content.panels:
             os.makedirs(
-                os.path.join(content_folder, "images",
+                os.path.join(content.content_folder, "images",
                              f"panel_{panel.panel_number}"))
-            for i ,vp in enumerate(panel.visual_prompts):
+        with st.spinner("İlk sayfa hazırlanıyor..."):
+            for i, vp in enumerate(content.panels[0].visual_prompts):
                 st.session_state["image_model"].generate_image(
                     vp,
-                    os.path.join(content_folder, "images", f"panel_{panel.panel_number}", f"{i}.png")
-                )
+                    os.path.join(content.content_folder, "images", "panel_1",
+                                 f"{i}.png"))
+        if st.button("Başla", use_container_width=True):
+            st.session_state["page"] = 5
+            st.rerun()
