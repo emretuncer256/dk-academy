@@ -1,5 +1,6 @@
 import streamlit as st
 import utils
+import os
 
 
 def lessons_page():
@@ -17,7 +18,9 @@ def lessons_page():
         col = cols[i % 3]
         with col:
             with st.container(border=True):
-                st.image(lesson["image"], use_column_width=True)
+                if lesson["image"]:
+                    st.image(os.path.join("assets", lesson["image"]),
+                             use_column_width=True)
                 if st.button(lesson["name"],
                              use_container_width=True,
                              type="primary"):

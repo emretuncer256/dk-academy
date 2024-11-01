@@ -1,6 +1,7 @@
 import streamlit as st
 from utils import load_interests
 from models.prompt import Prompt
+import os
 
 
 def interests_page():
@@ -15,7 +16,8 @@ def interests_page():
     for i, interest in enumerate(interests.values()):
         col = cols[i % 3]
         with col:
-            st.image(interest["image"])
+            if interest["image"]:
+                st.image(os.path.join("assets", interest["image"]))
             interest["status"] = st.button(interest["name"],
                                            use_container_width=True)
 
