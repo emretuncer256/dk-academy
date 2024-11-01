@@ -70,7 +70,7 @@ Bu girdiye dayanarak **JSON formatında bir çizgi roman oluştur**. title olaca
 - Her panelde sadece 2 görsel olacak.
 - Görsel promptlar İngilizce olacak.
 - Görsel promptlar, açıklayıcı ve net olacak.
-- Her panelde bir soru olacak. Soru, hikaye ile bağlantılı olacak ve temel düzeyde {lesson} soruları olacak.
+- Her panelde bir soru olacak. Soru, hikaye ile bağlantılı olacak ve ilkokul düzeyinde {lesson} soruları olacak.
 - Her panelde işlenen konuyla ilgili `learned` kısmında öğrencinin ne öğrendiği yazılacak.
 - Hikaye boyunca uyum ve bütünlük sağlanacak.
 - Hikayede hayali karakterler olacak. Öğrencinin ismini kullanılmayacak.
