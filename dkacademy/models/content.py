@@ -58,6 +58,7 @@ class Panel(BaseModel):
 class Content(BaseModel):
     title: str
     panels: list[Panel]
+    content_folder: str | None = None
 
     def to_json(self):
         return {
@@ -90,5 +91,7 @@ class Content(BaseModel):
         # Create images folder
         images_folder = os.path.join(content_folder, 'images')
         os.makedirs(images_folder)
+
+        self.content_folder = content_folder
 
         return content_folder
