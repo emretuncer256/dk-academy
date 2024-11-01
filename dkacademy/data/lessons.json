@@ -2,7 +2,7 @@
     "lessons": [
         {
             "name": "Matematik",
-            "image": "mathC.webp",
+            "image": "lessons/math.webp",
             "topics": [
                 "Toplama ve Çıkarma",
                 "Çarpma ve Bölme",
@@ -14,11 +14,11 @@
         },
         {
             "name": "Türkçe",
-            "image": "mathC.webp"
+            "image": null
         },
         {
             "name": "Fen Bilimleri",
-            "image": "mathC.webp"
+            "image": null
         }
     ]
 }
