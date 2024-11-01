@@ -13,7 +13,7 @@ def content_page():
     next_panel: int = st.session_state["next_panel"]
     content: Content = st.session_state["content"]
     content_folder: str = content.content_folder
-    panel: Panel = content.panels[next_panel]
+    panel: Panel = content.panels[next_panel - 1]
 
     images_path = os.path.join(content_folder, "images")
 
@@ -38,12 +38,15 @@ def content_page():
         st.session_state["page"] = 0
         st.rerun()
 
+    next_panel += 1
     with st.spinner("Sonraki sayfa oluşturuluyor..."):
-        next_panel += 1
-        for i, vp in content.panels[next_panel].visual_prompts:
+        for i, vp in enumerate(content.panels[next_panel-1].visual_prompts):
             st.session_state["image_model"].generate_image(
                 vp, os.path.join(images_path, f"panel_{next_panel}",
                                  f"{i}.png"))
-    if st.button("İlerle"):
-        st.session_state["next_panel"] = next_panel
+    if st.button("İlerle", on_click=go_next, args=(next_panel, )):
         st.rerun()
+
+
+def go_next(next_panel):
+    st.session_state["next_panel"] = next_panel 

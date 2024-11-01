@@ -21,6 +21,10 @@ def generation_page():
     st.write(user)
     st.write(prompt)
     pb = PromptBuilder()
+    
+    if st.button("Başla", use_container_width=True):
+        st.session_state["page"] = 5
+        st.rerun()
 
     if st.button("Eğitimi Üret"):
 
@@ -45,6 +49,3 @@ def generation_page():
                     vp,
                     os.path.join(content.content_folder, "images", "panel_1",
                                  f"{i}.png"))
-        if st.button("Başla", use_container_width=True):
-            st.session_state["page"] = 5
-            st.rerun()
