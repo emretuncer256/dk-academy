@@ -2,7 +2,7 @@ import streamlit as st
 import utils
 
 
-def topics():
+def topics_pages():
     if not st.session_state["user"]:
         st.session_state["page"] = 0
         st.rerun()

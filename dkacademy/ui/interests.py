@@ -3,7 +3,7 @@ from utils import load_interests
 from models.prompt import Prompt
 
 
-def interests():
+def interests_page():
     ints = load_interests()
     if not st.session_state["user"]:
         st.session_state["page"] = 0

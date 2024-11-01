@@ -3,7 +3,7 @@ import utils
 import os
 
 
-def lessons():
+def lessons_page():
     if not st.session_state["user"]:
         st.session_state["page"] = 0
         st.rerun()
