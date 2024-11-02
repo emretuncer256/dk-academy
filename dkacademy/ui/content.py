@@ -1,5 +1,5 @@
 import streamlit as st
-from models.content import Content, Panel
+from models.content import Content, Panel, Question
 import os
 
 
@@ -10,6 +10,8 @@ def check_content():
 
 
 def content_page():
+    check_content()
+    st.set_page_config(layout="wide")
     finished: bool = False
     next_panel: int = st.session_state["next_panel"]
     content: Content = st.session_state["content"]
@@ -24,13 +26,16 @@ def content_page():
         for i in range(len(panel.visual_prompts))
     ]
 
+    add_question(panel.question)
+
     st.title(f"{content.title} - {next_panel}")
 
-    cols = st.columns(2)
-    with cols[0]:
-        st.image(images[0])
-    with cols[1]:
-        st.image(images[1])
+    with st.container(border=True):
+        cols = st.columns(2)
+        with cols[0]:
+            st.image(images[0])
+        with cols[1]:
+            st.image(images[1])
 
     st.write(panel.story)
 
@@ -59,3 +64,15 @@ def go_next(next_panel, finished):
         st.session_state["page"] = 6
     else:
         st.session_state["next_panel"] = next_panel
+
+
+def add_question(question: Question):
+    st.sidebar.title("Soru")
+    st.sidebar.header(question.question)
+    for a in question.answers:
+        answer = st.button(a)
+        if answer and a == question.correct_answer:
+            st.sidebar.success("Tebrikler! Doğru Cevapladın.")
+        else:
+            st.sidebar.error("Yanlış Cevap.", icon=":material/error:")
+            st.sidebar.info(question.explanation, icon=":material/info:")
