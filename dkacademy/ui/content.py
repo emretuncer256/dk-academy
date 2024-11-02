@@ -10,6 +10,7 @@ def check_content():
 
 
 def content_page():
+    finished: bool = False
     next_panel: int = st.session_state["next_panel"]
     content: Content = st.session_state["content"]
     content_folder: str = content.content_folder
@@ -38,15 +39,22 @@ def content_page():
         st.session_state["page"] = 0
         st.rerun()
 
-    next_panel += 1
-    with st.spinner("Sonraki sayfa oluşturuluyor..."):
-        for i, vp in enumerate(content.panels[next_panel-1].visual_prompts):
-            st.session_state["image_model"].generate_image(
-                vp, os.path.join(images_path, f"panel_{next_panel}",
+    if next_panel != content.panels[-1].panel_number:
+        next_panel += 1
+        with st.spinner("Sonraki sayfa oluşturuluyor..."):
+            for i, vp in enumerate(content.panels[next_panel -
+                                                  1].visual_prompts):
+                st.session_state["image_model"].generate_image(
+                    vp,
+                    os.path.join(images_path, f"panel_{next_panel}",
                                  f"{i}.png"))
+    else:
+        finished = True
     if st.button("İlerle", on_click=go_next, args=(next_panel, )):
+        if finished:
+            st.session_state["page"] = 6
         st.rerun()
 
 
 def go_next(next_panel):
-    st.session_state["next_panel"] = next_panel 
+    st.session_state["next_panel"] = next_panel
