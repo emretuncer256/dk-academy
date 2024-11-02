@@ -1,5 +1,5 @@
 import streamlit as st
-from ui import login_page, interests_page, lessons_page, topics_pages, generation_page, content_page
+from ui import login_page, interests_page, lessons_page, topics_pages, generation_page, content_page, learned_page
 import utils
 import os
 
@@ -29,7 +29,8 @@ pages = {
     2: lessons_page,
     3: topics_pages,
     4: generation_page,
-    5: content_page
+    5: content_page,
+    6: learned_page
 }
 
 pages[st.session_state["page"]]()
