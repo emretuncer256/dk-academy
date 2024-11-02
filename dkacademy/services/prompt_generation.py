@@ -22,6 +22,4 @@ class PromptBuilder:
 
     def build(self, prompt: Prompt) -> None:
         self._instruction = utils.load_system_instruction()
-        self._instruction = self._instruction.replace(
-            "{lesson}", prompt.lesson).replace("{topic}", prompt.topic)
         self._prompt_data = prompt.to_json()
