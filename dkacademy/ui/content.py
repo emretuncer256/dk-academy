@@ -50,11 +50,12 @@ def content_page():
                                  f"{i}.png"))
     else:
         finished = True
-    if st.button("İlerle", on_click=go_next, args=(next_panel, )):
-        if finished:
-            st.session_state["page"] = 6
+    if st.button("İlerle", on_click=go_next, args=(next_panel, finished)):
         st.rerun()
 
 
-def go_next(next_panel):
-    st.session_state["next_panel"] = next_panel
+def go_next(next_panel, finished):
+    if finished:
+        st.session_state["page"] = 6
+    else:
+        st.session_state["next_panel"] = next_panel
