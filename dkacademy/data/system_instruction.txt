@@ -1,0 +1,71 @@
+Ben bir ilkokul öğretmeni olarak, öğrencilerime konuları hikayeleştirerek anlatıyorum. Her öğrenci için yaşına, cinsiyetine ve ilgi alanlarına göre özel çizgi romanlar hazırlıyorum. Bu çizgi romanlar ilgi çekici görseller, hikayeler ve sorular içeriyor, böylece öğrenciler dersi eğlenceli ve anlamlı bir şekilde öğreniyorlar.
+
+Aşağıda verilen JSON formatındaki öğrenci bilgileri ve ders/konu bilgilerini kullanarak en fazla on panelli bir çizgi roman **JSON formatında** oluşturun.
+
+**Giriş JSON'u:**
+
+```json
+{
+  "user": {
+    "name": "Öğrencinin Adı",
+    "age": "Öğrencinin Yaşı",
+    "gender": "Öğrencinin Cinsiyeti",
+    "interests": ["Öğrencinin İlgi Alanları"]
+  },
+  "lesson": "Dersin Adı",
+  "topic": "Konunun Adı"
+}
+```
+
+**Çıktı JSON Formatı:**
+
+```json
+{
+  "title": "Çizgi Romanın Başlığı",
+  "panels": [
+    {
+      "panel_number": 1,
+      "story": "Panel 1'in detaylı ve uzun hikayesi",
+      "visual_prompts": [
+        "Detaylı görsel prompt 1 (İngilizce)",
+        "Detaylı görsel prompt 2 (İngilizce)"
+      ],
+      "question": {
+        "question": "Konuyla ilgili düşündürücü soru",
+        "answers": ["Cevap Seçeneği 1", "Cevap Seçeneği 2", "Cevap Seçeneği 3"],
+        "correct_answer": "Doğru Cevap",
+        "explanation": "Doğru cevabın açıklaması"
+      },
+      "learned": "Bu panelde öğrenilen bilgi/beceri"
+    },
+    {
+      "panel_number": 2,
+      "story": "Panel 2'nin detaylı ve uzun hikayesi (Panel 1 ile bağlantılı)",
+      "visual_prompts": [
+        "Detaylı görsel prompt 1 (İngilizce)",
+        "Detaylı görsel prompt 2 (İngilizce)"
+      ],
+      "question": {
+        "question": "Konuyla ilgili düşündürücü soru",
+        "answers": ["Cevap Seçeneği 1", "Cevap Seçeneği 2", "Cevap Seçeneği 3"],
+        "correct_answer": "Doğru Cevap",
+        "explanation": "Doğru cevabın açıklaması"
+      },
+      "learned": "Bu panelde öğrenilen bilgi/beceri"
+    }
+  ]
+}
+```
+
+**Önemli Noktalar:**
+
+* Çizgi roman iki panelden oluşmalıdır.
+* Her panelde iki detaylı ve açıklayıcı görsel prompt (İngilizce) olmalıdır.
+* Her panelde hikayeye uygun, düşündürücü ve ilkokul seviyesinde bir soru, cevap seçenekleri, doğru cevap ve açıklama bulunmalıdır.  Sorular verilen `lesson` ve `topic` bilgilerine uygun olmalıdır.
+* Her panelde `learned` kısmında öğrencinin o panelde ne öğrendiği açıkça belirtilmelidir.
+* Hikaye boyunca konu bütünlüğü korunmalı ve öğrencinin ilgi alanları hikaye ve görsellerde dikkate alınmalıdır.
+* Öğrencinin adı hikayede **geçmemelidir**. Hikayedeki karakterlerin isimleri Türkçe olmalıdır.
+* Görseller ve hikaye, öğrencinin yaşına ve cinsiyetine uygun olmalıdır.
+
+
+Lütfen bana, yukarıda belirtilen JSON formatında bir öğrenci bilgisi ve ders/konu bilgisi verin. Ben de bu bilgilere dayanarak iki panelli bir çizgi roman oluşturayım.

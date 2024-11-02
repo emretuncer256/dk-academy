@@ -2,7 +2,7 @@ import streamlit as st
 from models import User
 
 
-def login():
+def login_page():
     st.title("DK Akademi ile Maceraya Hazır Mısın?")
     with st.form(key="user_info_form"):
         st.header("Kullanıcı Girişi")

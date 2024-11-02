@@ -36,7 +36,7 @@ class SDXLGenerator:
                        output_path,
                        num_steps=4,
                        guidance_scale=0):
-        image = self.pipe(prompt,
+        image = self.pipe("Comic book style, " + prompt,
                           num_inference_steps=num_steps,
                           guidance_scale=guidance_scale).images[0]
         image.save(output_path)

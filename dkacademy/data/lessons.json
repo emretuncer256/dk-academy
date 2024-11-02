@@ -1,0 +1,24 @@
+{
+    "lessons": [
+        {
+            "name": "Matematik",
+            "image": "lessons/math.webp",
+            "topics": [
+                "Toplama ve Çıkarma",
+                "Çarpma ve Bölme",
+                "Zaman Ölçme",
+                "Veri Toplama ve Değerlendirme",
+                "Uzunluk Ölçme",
+                "Sıvı Ölçme"
+            ]
+        },
+        {
+            "name": "Türkçe",
+            "image": null
+        },
+        {
+            "name": "Fen Bilimleri",
+            "image": null
+        }
+    ]
+}
