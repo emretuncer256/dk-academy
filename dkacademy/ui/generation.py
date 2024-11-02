@@ -12,12 +12,20 @@ def check_user_and_prompt():
 
 
 def generation_page():
+    generated: bool = False
     check_user_and_prompt()
     st.title("Öğrenmeye Hazırlan!")
 
     prompt = st.session_state["prompt"]
 
     pb = PromptBuilder()
+
+    if st.button("Başla",
+                 use_container_width=True,
+                 type="primary",
+                 disabled=generated):
+        st.session_state["page"] = 5
+        st.rerun()
 
     if st.button("Eğitimi Üret", use_container_width=True):
 
@@ -43,6 +51,4 @@ def generation_page():
                     vp,
                     os.path.join(content.content_folder, "images", "panel_1",
                                  f"{i}.png"))
-            if st.button("Başla", use_container_width=True, type="primary"):
-                st.session_state["page"] = 5
-                st.rerun()
+            generated = True
