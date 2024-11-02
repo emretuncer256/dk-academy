@@ -70,9 +70,9 @@ def add_question(question: Question):
     st.sidebar.title("Soru")
     st.sidebar.header(question.question)
     for a in question.answers:
-        answer = st.button(a)
+        answer = st.sidebar.button(a)
         if answer and a == question.correct_answer:
             st.sidebar.success("Tebrikler! Doğru Cevapladın.")
-        else:
+        elif answer and a != question.correct_answer:
             st.sidebar.error("Yanlış Cevap.", icon=":material/error:")
             st.sidebar.info(question.explanation, icon=":material/info:")
