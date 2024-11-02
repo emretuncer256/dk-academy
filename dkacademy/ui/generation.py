@@ -11,8 +11,9 @@ def check_user_and_prompt():
         st.rerun()
 
 
+generated: bool = False
 def generation_page():
-    generated: bool = False
+    global generated
     check_user_and_prompt()
     st.title("Öğrenmeye Hazırlan!")
 
@@ -23,7 +24,7 @@ def generation_page():
     if st.button("Başla",
                  use_container_width=True,
                  type="primary",
-                 disabled=generated):
+                 disabled=not generated):
         st.session_state["page"] = 5
         st.rerun()
 
