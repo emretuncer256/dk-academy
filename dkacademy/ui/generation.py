@@ -19,10 +19,8 @@ def generation_page():
 
     pb = PromptBuilder()
 
-    if st.button("Başla",
-                 use_container_width=True,
-                 type="primary",
-                 disabled=not st.session_state["first_page_generated"]):
+    st.warning("Önce eğitim üret, sonra başlat.", icon=":material/warning:")
+    if st.button("Başla", use_container_width=True, type="primary"):
         st.session_state["page"] = 5
         st.rerun()
 
@@ -50,4 +48,3 @@ def generation_page():
                     vp,
                     os.path.join(content.content_folder, "images", "panel_1",
                                  f"{i}.png"))
-            st.session_state["first_page_generated"] = True
