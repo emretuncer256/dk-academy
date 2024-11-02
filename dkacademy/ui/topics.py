@@ -11,7 +11,7 @@ def topics_pages():
     topics = next(ls["topics"] for ls in utils.load_lessons()["lessons"]
                if ls["name"] == lesson)
 
-    st.title("Topics")
+    st.title("Konular")
 
     for topic in topics:
         if st.button(topic):
