@@ -13,26 +13,20 @@ def check_user_and_prompt():
 
 def generation_page():
     check_user_and_prompt()
-    st.title("Generation")
+    st.title("Öğrenmeye Hazırlan!")
 
-    user = st.session_state["user"]
     prompt = st.session_state["prompt"]
 
-    st.write(user)
-    st.write(prompt)
     pb = PromptBuilder()
-    
-    if st.button("Başla", use_container_width=True):
-        st.session_state["page"] = 5
-        st.rerun()
 
-    if st.button("Eğitimi Üret"):
+    if st.button("Eğitimi Üret", use_container_width=True):
 
         pb.build(prompt)
 
-        model = GeminiService(pb.system_instruction)
-        content = model.generate_content(pb.prompt)
-        st.write(content)
+        with st.spinner("Hikaye üretiliyor..."):
+            model = GeminiService(pb.system_instruction)
+            content = model.generate_content(pb.prompt)
+            st.text("Hikaye üretildi")
 
         content.save()
         st.session_state["content"] = content
@@ -49,3 +43,6 @@ def generation_page():
                     vp,
                     os.path.join(content.content_folder, "images", "panel_1",
                                  f"{i}.png"))
+            if st.button("Başla", use_container_width=True, type="primary"):
+                st.session_state["page"] = 5
+                st.rerun()
