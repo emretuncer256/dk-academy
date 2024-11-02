@@ -4,12 +4,10 @@ import json
 
 
 def learned_page():
-    # if not st.session_state["content"]:
-    #     st.session_state["page"] = 0
-    #     st.rerun()
-    # content: Content = st.session_state["content"]
-    with open(r"contents\20241101160027\content.json", "r") as f:
-        content = Content.from_json(json.load(f))
+    if not st.session_state["content"]:
+        st.session_state["page"] = 0
+        st.rerun()
+    content: Content = st.session_state["content"]
 
     st.title("Neler Öğrendik?")
 
