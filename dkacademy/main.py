@@ -23,6 +23,9 @@ if "next_panel" not in st.session_state:
 if "image_model" not in st.session_state:
     st.session_state["image_model"] = utils.load_model()
 
+if "first_page_generated" not in st.session_state:
+    st.session_state["first_page_generated"] = False
+
 pages = {
     0: login_page,
     1: interests_page,
@@ -34,3 +37,7 @@ pages = {
 }
 
 pages[st.session_state["page"]]()
+
+# TODO: Last page returns login page. Fix it
+# TODO: Questions will be displayed
+# TODO: The prompt will be improved
