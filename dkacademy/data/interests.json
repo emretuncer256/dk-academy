@@ -21,7 +21,7 @@
     },
     "animals": {
         "name": "Hayvanlar",
-        "image": null,
+        "image": "interests/animals.webp",
         "status": false
     },
     "vehicles": {
