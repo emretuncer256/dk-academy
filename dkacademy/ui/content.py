@@ -40,10 +40,6 @@ def content_page():
     st.write(panel.story)
 
     # Next Panel Generation
-    if content.panels[-1].panel_number == panel.panel_number:
-        st.session_state["page"] = 0
-        st.rerun()
-
     if next_panel != content.panels[-1].panel_number:
         next_panel += 1
         with st.spinner("Sonraki sayfa oluşturuluyor..."):
